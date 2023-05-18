@@ -3,9 +3,9 @@ import {useEffect} from 'react';
 
 import useForceUpdate from '../hooks/useForceUpdate';
 
-import CounterStore from '../stores/CounterStore';
+import CounterStore from './CounterStore';
 
-export default function useStore() {
+export default function useCounterStore() {
 	const store = container.resolve(CounterStore);
 
 	const forceUpdate = useForceUpdate();

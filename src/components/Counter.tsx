@@ -1,7 +1,7 @@
-import useStore from '../stores/useStore';
+import useCounterStore from '../stores/useCounterStore';
 
 export default function Counter() {
-	const store = useStore();
+	const store = useCounterStore();
 
 	return (
 		<div>
