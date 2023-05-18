@@ -1,4 +1,5 @@
 import {container} from 'tsyringe';
+import {useEffect} from 'react';
 
 import useForceUpdate from '../hooks/useForceUpdate';
 
@@ -8,7 +9,10 @@ export default function Counter() {
 	const store = container.resolve(Store);
 
 	const forceUpdate = useForceUpdate();
-	store.forceUpdates.add(forceUpdate);
+
+	useEffect(() => {
+		store.forceUpdates.add(forceUpdate);
+	}, []);
 
 	return (
 		<div>
