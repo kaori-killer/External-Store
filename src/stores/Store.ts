@@ -14,4 +14,12 @@ export default class Store {
 			forceUpdate();
 		});
 	}
+
+	addListener(forceUpdate: ForceUpdates) {
+		this.forceUpdates.add(forceUpdate);
+	}
+
+	removeListener(forceUpdate: ForceUpdates) {
+		this.forceUpdates.delete(forceUpdate);
+	}
 }

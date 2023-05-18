@@ -11,10 +11,10 @@ export default function Counter() {
 	const forceUpdate = useForceUpdate();
 
 	useEffect(() => {
-		store.forceUpdates.add(forceUpdate);
+		store.addListener(forceUpdate);
 
 		return () => {
-			store.forceUpdates.delete(forceUpdate);
+			store.removeListener(forceUpdate);
 		};
 	}, [store, forceUpdate]);
 
