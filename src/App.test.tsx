@@ -9,7 +9,18 @@ test('App', () => {
 });
 
 describe('App', () => {
-	context('', () => {
+	context('증가 버튼 1번 눌렀을 때', () => {
+		test('counter', () => {
+			render(<App />);
+
+			fireEvent.click(screen.getByText('증가'));
+
+			const elements = screen.getAllByText('Counter: 1');
+			expect(elements).toHaveLength(2);
+		});
+	});
+
+	context('증가 버튼 2번 눌렀을 때', () => {
 		test('counter', () => {
 			render(<App />);
 
