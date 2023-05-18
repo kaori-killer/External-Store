@@ -16,7 +16,7 @@ export default function CounterControl() {
 
 	return (
 		<div>
-			<p>{StaticRange.count}</p>
+			<p>{store.count}</p>
 			<button type='button' onClick={handleClick}>
                 증가
 			</button>
