@@ -7,11 +7,9 @@ import Store from '../stores/Store';
 export default function CounterControl() {
 	const store = container.resolve(Store);
 
-	const forceUpdate = useForceUpdate();
-
 	const handleClick = () => {
 		store.count += 1;
-		forceUpdate();
+		store.forceUpdate();
 	};
 
 	return (
