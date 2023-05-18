@@ -20,7 +20,7 @@ export default function Counter() {
 
 	return (
 		<div>
-			<p>{store.count}</p>
+			<p>{`Counter: ${store.count}`}</p>
 		</div>
 	);
 }

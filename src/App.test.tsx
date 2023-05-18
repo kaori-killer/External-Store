@@ -11,6 +11,8 @@ describe('App', () => {
 		render(<App />);
 
 		fireEvent.click(screen.getByText('증가'));
-		screen.getByText('Count: 1');
+
+		const elements = screen.getAllByText('Counter: 1');
+		expect(elements).toHaveLength(2);
 	});
 });
