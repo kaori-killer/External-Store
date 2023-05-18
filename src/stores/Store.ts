@@ -1,25 +1,25 @@
 import {singleton} from 'tsyringe';
 import useForceUpdate from '../hooks/useForceUpdate';
 
-type ForceUpdates = () => void;
+type Listeners = () => void;
 
 @singleton()
 export default class Store {
 	count = 0;
 
-	forceUpdates = new Set<ForceUpdates>();
+	listeners = new Set<Listeners>();
 
 	update() {
-		this.forceUpdates.forEach(forceUpdate => {
-			forceUpdate();
+		this.listeners.forEach(listener => {
+			listener();
 		});
 	}
 
-	addListener(forceUpdate: ForceUpdates) {
-		this.forceUpdates.add(forceUpdate);
+	addListener(listener: Listeners) {
+		this.listeners.add(listener);
 	}
 
-	removeListener(forceUpdate: ForceUpdates) {
-		this.forceUpdates.delete(forceUpdate);
+	removeListener(listener: Listeners) {
+		this.listeners.delete(listener);
 	}
 }
