@@ -3,10 +3,10 @@ import {useEffect} from 'react';
 
 import useForceUpdate from '../hooks/useForceUpdate';
 
-import Store from '../stores/Store';
+import CounterStore from '../stores/CounterStore';
 
 export default function Counter() {
-	const store = container.resolve(Store);
+	const store = container.resolve(CounterStore);
 
 	const forceUpdate = useForceUpdate();
 
