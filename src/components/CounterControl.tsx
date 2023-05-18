@@ -9,12 +9,12 @@ export default function CounterControl() {
 
 	const handleClickIncrease = () => {
 		store.count += 1;
-		store.update();
+		store.publish();
 	};
 
 	const handleClickDecrease = () => {
 		store.count -= 1;
-		store.update();
+		store.publish();
 	};
 
 	return (

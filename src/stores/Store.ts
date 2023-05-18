@@ -9,7 +9,7 @@ export default class Store {
 
 	listeners = new Set<Listeners>();
 
-	update() {
+	publish() {
 		this.listeners.forEach(listener => {
 			listener();
 		});
