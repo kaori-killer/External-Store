@@ -1,5 +1,7 @@
 import {render, screen, fireEvent} from '@testing-library/react';
 
+import {container} from 'tsyringe';
+
 import App from './App';
 
 const context = describe;
@@ -9,6 +11,11 @@ test('App', () => {
 });
 
 describe('App', () => {
+	beforeEach(() => {
+		// 각 테스트가 독립적일 수 있게 초기화
+		container.clearInstances();
+	});
+
 	context('증가 버튼 1번 눌렀을 때', () => {
 		test('counter', () => {
 			render(<App />);
