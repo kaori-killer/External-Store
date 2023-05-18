@@ -8,7 +8,7 @@ export default function Counter() {
 	const store = container.resolve(Store);
 
 	const forceUpdate = useForceUpdate();
-	store.forceUpdate = forceUpdate;
+	store.forceUpdates.add(forceUpdate);
 
 	return (
 		<div>

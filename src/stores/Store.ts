@@ -1,13 +1,17 @@
 import {singleton} from 'tsyringe';
 import useForceUpdate from '../hooks/useForceUpdate';
 
+type ForceUpdates = () => void;
+
 @singleton()
 export default class Store {
 	count = 0;
 
-	forceUpdate: () => void;
+	forceUpdates = new Set<ForceUpdates>();
 
 	update() {
-		this.forceUpdate();
+		this.forceUpdates.forEach(forceUpdate => {
+			forceUpdate();
+		});
 	}
 }

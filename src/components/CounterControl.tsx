@@ -9,7 +9,7 @@ export default function CounterControl() {
 
 	const handleClick = () => {
 		store.count += 1;
-		store.forceUpdate();
+		store.update();
 	};
 
 	return (
