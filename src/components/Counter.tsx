@@ -12,7 +12,7 @@ export default function Counter() {
 
 	useEffect(() => {
 		store.forceUpdates.add(forceUpdate);
-	}, []);
+	}, [store, forceUpdate]);
 
 	return (
 		<div>
