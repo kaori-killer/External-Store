@@ -1,4 +1,4 @@
-import useCounterStore from '../stores/useCounterStore';
+import useCounterStore from '../hooks/useCounterStore';
 
 export default function Counter() {
 	const store = useCounterStore();
