@@ -12,6 +12,10 @@ export default function Counter() {
 
 	useEffect(() => {
 		store.forceUpdates.add(forceUpdate);
+
+		return () => {
+			store.forceUpdates.delete(forceUpdate);
+		};
 	}, [store, forceUpdate]);
 
 	return (
